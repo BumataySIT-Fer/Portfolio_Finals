@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ── Variables ── */
+:root {
+  --nav-bg: #0d0d0d;
+  --nav-border: rgba(255, 255, 255, 0.07);
+  --nav-text-muted: rgba(255, 255, 255, 0.42);
+  --nav-text: #f5f0e8;
+  --nav-gold: #c9a84c;
+  --nav-height: 68px;
+}
+ 
+/* ── Navbar Shell ── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  padding: 0 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(13, 13, 13, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--nav-border);
+}
+ 
+/* ── Logo ── */
+.nav-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--nav-text);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+ 
+.nav-logo::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--nav-gold);
+  flex-shrink: 0;
+}
+ 
+/* ── Right Side Wrapper ── */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+ 
+/* ── Links Group ── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding-right: 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+ 
+/* ── Individual Link ── */
+.nav-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--nav-text-muted);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+  position: relative;
+}
+ 
+.nav-links a sup {
+  font-size: 0.58rem;
+  color: var(--nav-gold);
+  vertical-align: super;
+  margin-right: 2px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+ 
+.nav-links a:hover {
+  color: var(--nav-text);
+  background: rgba(255, 255, 255, 0.05);
+}
+ 
+.nav-links a.active {
+  color: var(--nav-text);
+}
+ 
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--nav-gold);
+}
+ 
+/* ── CTA Button ── */
+.nav-cta {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #0d0d0d;
+  background: var(--nav-gold);
+  padding: 7px 18px;
+  border-radius: 6px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+ 
+.nav-cta:hover {
+  opacity: 0.88;
+}
