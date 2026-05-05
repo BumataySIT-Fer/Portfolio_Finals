@@ -30,14 +30,14 @@ const Admin: React.FC = () => {
     }
   };
 
-  const fetchMessages = async () => {
-    const res = await fetch('http://localhost:5000/api/messages');
+const fetchMessages = async () => {
+    const res = await fetch('https://portfoliofinals-production.up.railway.app/api/messages');
     const data = await res.json();
     setMessages(data);
   };
 
   const deleteMessage = async (id: string) => {
-    await fetch(`http://localhost:5000/api/messages/${id}`, { method: 'DELETE' });
+    await fetch(`https://portfoliofinals-production.up.railway.app/api/messages/${id}`, { method: 'DELETE' });
     setMessages(messages.filter(m => m._id !== id));
   };
 
